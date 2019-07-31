@@ -8,6 +8,11 @@ namespace Payroll
 {
     class Person
     {
-        
+        public Person(string fName, string lName, string currentNum)
+        {
+
+
+            return;
+        }
     }
 }

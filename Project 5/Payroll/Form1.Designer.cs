@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.formTitle = new System.Windows.Forms.Label();
-            this.personList = new System.Windows.Forms.ListView();
             this.addPersonTitle = new System.Windows.Forms.Label();
             this.firstName = new System.Windows.Forms.TextBox();
             this.firstNameLabel = new System.Windows.Forms.Label();
@@ -50,6 +49,8 @@
             this.pAddress = new System.Windows.Forms.TextBox();
             this.addressInfo = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.personList = new System.Windows.Forms.ListBox();
+            this.hirePerson = new System.Windows.Forms.Button();
             this.basicInfo.SuspendLayout();
             this.addressInfo.SuspendLayout();
             this.SuspendLayout();
@@ -63,14 +64,6 @@
             this.formTitle.Size = new System.Drawing.Size(305, 46);
             this.formTitle.TabIndex = 0;
             this.formTitle.Text = "Payroll Machine";
-            // 
-            // personList
-            // 
-            this.personList.Location = new System.Drawing.Point(888, 157);
-            this.personList.Name = "personList";
-            this.personList.Size = new System.Drawing.Size(235, 808);
-            this.personList.TabIndex = 1;
-            this.personList.UseCompatibleStateImageBehavior = false;
             // 
             // addPersonTitle
             // 
@@ -264,17 +257,40 @@
             this.button1.TabIndex = 21;
             this.button1.Text = "Add Person";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // personList
+            // 
+            this.personList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personList.FormattingEnabled = true;
+            this.personList.ItemHeight = 25;
+            this.personList.Location = new System.Drawing.Point(936, 185);
+            this.personList.Name = "personList";
+            this.personList.Size = new System.Drawing.Size(190, 754);
+            this.personList.TabIndex = 22;
+            // 
+            // hirePerson
+            // 
+            this.hirePerson.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hirePerson.Location = new System.Drawing.Point(635, 887);
+            this.hirePerson.Name = "hirePerson";
+            this.hirePerson.Size = new System.Drawing.Size(169, 52);
+            this.hirePerson.TabIndex = 23;
+            this.hirePerson.Text = "Hire Person";
+            this.hirePerson.UseVisualStyleBackColor = true;
+            this.hirePerson.Click += new System.EventHandler(this.hirePerson_Click);
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1189, 1002);
+            this.Controls.Add(this.hirePerson);
+            this.Controls.Add(this.personList);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.addressInfo);
             this.Controls.Add(this.basicInfo);
             this.Controls.Add(this.addPersonTitle);
-            this.Controls.Add(this.personList);
             this.Controls.Add(this.formTitle);
             this.Name = "mainForm";
             this.Text = "Payroll Machine";
@@ -290,7 +306,6 @@
         #endregion
 
         private System.Windows.Forms.Label formTitle;
-        private System.Windows.Forms.ListView personList;
         private System.Windows.Forms.Label addPersonTitle;
         private System.Windows.Forms.TextBox firstName;
         private System.Windows.Forms.Label firstNameLabel;
@@ -311,6 +326,8 @@
         private System.Windows.Forms.TextBox pAddress;
         private System.Windows.Forms.GroupBox addressInfo;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox personList;
+        private System.Windows.Forms.Button hirePerson;
     }
 }
 

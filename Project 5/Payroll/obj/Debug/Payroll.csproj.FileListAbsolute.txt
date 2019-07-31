@@ -1,0 +1,10 @@
+C:\Users\taymcken\Documents\GitHub\Revamped-Payroll\Project 5\Payroll\bin\Debug\Payroll.exe.config
+C:\Users\taymcken\Documents\GitHub\Revamped-Payroll\Project 5\Payroll\bin\Debug\Payroll.exe
+C:\Users\taymcken\Documents\GitHub\Revamped-Payroll\Project 5\Payroll\bin\Debug\Payroll.pdb
+C:\Users\taymcken\Documents\GitHub\Revamped-Payroll\Project 5\Payroll\obj\Debug\Payroll.csprojAssemblyReference.cache
+C:\Users\taymcken\Documents\GitHub\Revamped-Payroll\Project 5\Payroll\obj\Debug\Payroll.mainForm.resources
+C:\Users\taymcken\Documents\GitHub\Revamped-Payroll\Project 5\Payroll\obj\Debug\Payroll.Properties.Resources.resources
+C:\Users\taymcken\Documents\GitHub\Revamped-Payroll\Project 5\Payroll\obj\Debug\Payroll.csproj.GenerateResource.cache
+C:\Users\taymcken\Documents\GitHub\Revamped-Payroll\Project 5\Payroll\obj\Debug\Payroll.csproj.CoreCompileInputs.cache
+C:\Users\taymcken\Documents\GitHub\Revamped-Payroll\Project 5\Payroll\obj\Debug\Payroll.exe
+C:\Users\taymcken\Documents\GitHub\Revamped-Payroll\Project 5\Payroll\obj\Debug\Payroll.pdb
