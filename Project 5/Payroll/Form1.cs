@@ -15,6 +15,7 @@ namespace Payroll
         private List<Person> Employees = new List<Person>();
         private string listName;
         private bool onPayroll;
+        private Person newPerson;
 
         public mainForm()
         {
@@ -29,27 +30,12 @@ namespace Payroll
         {
         }
 
-        public void button1_Click(object sender, EventArgs e)
-        {
-        }
-
         private void ListAdder()
         {
             int counter = -1;
 
             if (payrollYes.Checked)
             {
-                /*
-                counter++;
-                personList.Items[counter].
-                ListViewItem li = new ListViewItem();
-                li.ForeColor = Color.Blue;
-                li.Text = listName;
-                string holdThis = li.Text;
-                personList.Items.Add(holdThis);
-                personList.Items.Add(firstName.Text + ", " + lastName.Text);
-                personList.Items[counter] = Color.Blue;
-                ForeColor = Color.Blue;*/
                 personList.Items.Add(firstName.Text + " " + lastName.Text + "***");
             }
 
@@ -65,15 +51,30 @@ namespace Payroll
             string inputFirstName = firstName.Text;
             string inputLastName = lastName.Text;
             string inputNumber = phoneNum.Text;
-            listName = inputFirstName + " " + inputLastName;
-            //AddPerson(inputFirstName, inputLastName, inputNumber);
-            Person newPerson = new Person(inputFirstName, inputLastName, inputNumber);
+            newPerson = new Person(inputFirstName, inputLastName, inputNumber);
+
+            string inputAddress = addressInfo.Text;
+            string inputAptNum = pAptNum.Text;
+            string inputCity = pCity.Text;
+            string inputState = pState.Text;
+            string inputZip = pZip.Text;
+            Employee newEmployee = new Employee(inputAddress, inputAptNum, inputCity, inputState, inputZip);
+
+
+
             Employees.Add(newPerson);
             ListAdder();
         }
 
-        private void personList_SelectedIndexChanged(object sender, EventArgs e)
+        private void personList_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            int index = this.personList.IndexFromPoint(e.Location);
+            if (index != System.Windows.Forms.ListBox.NoMatches)
+            {
+                MessageBox.Show(index.ToString());
+                
+
+            }
         }
     }
 }

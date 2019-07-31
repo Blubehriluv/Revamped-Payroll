@@ -51,6 +51,8 @@
             this.personList = new System.Windows.Forms.ListBox();
             this.hirePerson = new System.Windows.Forms.Button();
             this.employeeInfo = new System.Windows.Forms.GroupBox();
+            this.payrollNo = new System.Windows.Forms.RadioButton();
+            this.payrollYes = new System.Windows.Forms.RadioButton();
             this.jobTitle = new System.Windows.Forms.TextBox();
             this.jobTitleLabel = new System.Windows.Forms.Label();
             this.empWage = new System.Windows.Forms.TextBox();
@@ -58,8 +60,6 @@
             this.empHours = new System.Windows.Forms.TextBox();
             this.hoursLabel = new System.Windows.Forms.Label();
             this.payrolLabel = new System.Windows.Forms.Label();
-            this.payrollYes = new System.Windows.Forms.RadioButton();
-            this.payrollNo = new System.Windows.Forms.RadioButton();
             this.generateHuman = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.payEmployees = new System.Windows.Forms.Button();
@@ -87,9 +87,9 @@
             this.addPersonTitle.Location = new System.Drawing.Point(13, 70);
             this.addPersonTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.addPersonTitle.Name = "addPersonTitle";
-            this.addPersonTitle.Size = new System.Drawing.Size(110, 24);
+            this.addPersonTitle.Size = new System.Drawing.Size(606, 24);
             this.addPersonTitle.TabIndex = 2;
-            this.addPersonTitle.Text = "Add Person";
+            this.addPersonTitle.Text = "Add people to the Payroll Machine database and pay them accordingly.";
             // 
             // firstName
             // 
@@ -157,7 +157,7 @@
             this.basicInfo.Controls.Add(this.lastNameLabel);
             this.basicInfo.Controls.Add(this.lastName);
             this.basicInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.basicInfo.Location = new System.Drawing.Point(17, 122);
+            this.basicInfo.Location = new System.Drawing.Point(25, 122);
             this.basicInfo.Margin = new System.Windows.Forms.Padding(2);
             this.basicInfo.Name = "basicInfo";
             this.basicInfo.Padding = new System.Windows.Forms.Padding(2);
@@ -275,7 +275,7 @@
             this.addressInfo.Controls.Add(this.stateLabel);
             this.addressInfo.Controls.Add(this.zipLabel);
             this.addressInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressInfo.Location = new System.Drawing.Point(13, 334);
+            this.addressInfo.Location = new System.Drawing.Point(21, 334);
             this.addressInfo.Margin = new System.Windows.Forms.Padding(2);
             this.addressInfo.Name = "addressInfo";
             this.addressInfo.Padding = new System.Windows.Forms.Padding(2);
@@ -289,18 +289,18 @@
             this.personList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.personList.FormattingEnabled = true;
             this.personList.ItemHeight = 16;
-            this.personList.Location = new System.Drawing.Point(692, 216);
+            this.personList.Location = new System.Drawing.Point(673, 216);
             this.personList.Margin = new System.Windows.Forms.Padding(2);
             this.personList.Name = "personList";
             this.personList.ScrollAlwaysVisible = true;
             this.personList.Size = new System.Drawing.Size(214, 468);
             this.personList.TabIndex = 22;
-            this.personList.SelectedIndexChanged += new System.EventHandler(this.personList_SelectedIndexChanged);
+            this.personList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.personList_MouseDoubleClick);
             // 
             // hirePerson
             // 
             this.hirePerson.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hirePerson.Location = new System.Drawing.Point(91, 608);
+            this.hirePerson.Location = new System.Drawing.Point(99, 608);
             this.hirePerson.Margin = new System.Windows.Forms.Padding(2);
             this.hirePerson.Name = "hirePerson";
             this.hirePerson.Size = new System.Drawing.Size(113, 34);
@@ -321,7 +321,7 @@
             this.employeeInfo.Controls.Add(this.hoursLabel);
             this.employeeInfo.Controls.Add(this.payrolLabel);
             this.employeeInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeeInfo.Location = new System.Drawing.Point(334, 117);
+            this.employeeInfo.Location = new System.Drawing.Point(345, 122);
             this.employeeInfo.Margin = new System.Windows.Forms.Padding(2);
             this.employeeInfo.Name = "employeeInfo";
             this.employeeInfo.Padding = new System.Windows.Forms.Padding(2);
@@ -329,6 +329,30 @@
             this.employeeInfo.TabIndex = 24;
             this.employeeInfo.TabStop = false;
             this.employeeInfo.Text = "Employee Info";
+            // 
+            // payrollNo
+            // 
+            this.payrollNo.AutoSize = true;
+            this.payrollNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.payrollNo.Location = new System.Drawing.Point(221, 161);
+            this.payrollNo.Name = "payrollNo";
+            this.payrollNo.Size = new System.Drawing.Size(46, 22);
+            this.payrollNo.TabIndex = 21;
+            this.payrollNo.TabStop = true;
+            this.payrollNo.Text = "No";
+            this.payrollNo.UseVisualStyleBackColor = true;
+            // 
+            // payrollYes
+            // 
+            this.payrollYes.AutoSize = true;
+            this.payrollYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.payrollYes.Location = new System.Drawing.Point(116, 161);
+            this.payrollYes.Name = "payrollYes";
+            this.payrollYes.Size = new System.Drawing.Size(51, 22);
+            this.payrollYes.TabIndex = 20;
+            this.payrollYes.TabStop = true;
+            this.payrollYes.Text = "Yes";
+            this.payrollYes.UseVisualStyleBackColor = true;
             // 
             // jobTitle
             // 
@@ -398,34 +422,10 @@
             this.payrolLabel.TabIndex = 13;
             this.payrolLabel.Text = "Payroll:";
             // 
-            // payrollYes
-            // 
-            this.payrollYes.AutoSize = true;
-            this.payrollYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.payrollYes.Location = new System.Drawing.Point(116, 161);
-            this.payrollYes.Name = "payrollYes";
-            this.payrollYes.Size = new System.Drawing.Size(51, 22);
-            this.payrollYes.TabIndex = 20;
-            this.payrollYes.TabStop = true;
-            this.payrollYes.Text = "Yes";
-            this.payrollYes.UseVisualStyleBackColor = true;
-            // 
-            // payrollNo
-            // 
-            this.payrollNo.AutoSize = true;
-            this.payrollNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.payrollNo.Location = new System.Drawing.Point(221, 161);
-            this.payrollNo.Name = "payrollNo";
-            this.payrollNo.Size = new System.Drawing.Size(46, 22);
-            this.payrollNo.TabIndex = 21;
-            this.payrollNo.TabStop = true;
-            this.payrollNo.Text = "No";
-            this.payrollNo.UseVisualStyleBackColor = true;
-            // 
             // generateHuman
             // 
             this.generateHuman.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.generateHuman.Location = new System.Drawing.Point(421, 385);
+            this.generateHuman.Location = new System.Drawing.Point(722, 124);
             this.generateHuman.Margin = new System.Windows.Forms.Padding(2);
             this.generateHuman.Name = "generateHuman";
             this.generateHuman.Size = new System.Drawing.Size(113, 34);
@@ -435,7 +435,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(334, 439);
+            this.textBox1.Location = new System.Drawing.Point(345, 439);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -445,7 +445,7 @@
             // payEmployees
             // 
             this.payEmployees.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.payEmployees.Location = new System.Drawing.Point(739, 122);
+            this.payEmployees.Location = new System.Drawing.Point(430, 388);
             this.payEmployees.Margin = new System.Windows.Forms.Padding(2);
             this.payEmployees.Name = "payEmployees";
             this.payEmployees.Size = new System.Drawing.Size(113, 34);
@@ -457,7 +457,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(692, 184);
+            this.label1.Location = new System.Drawing.Point(673, 184);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 22);
             this.label1.TabIndex = 28;

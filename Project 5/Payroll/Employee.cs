@@ -6,19 +6,17 @@ using System.Threading.Tasks;
 
 namespace Payroll
 {
-    class Person
+    class Employee : Person
     {
-        public Person(string fName, string lName, string currentNum)
+        public Employee(string pAddress, string pApt, string pCity, string pState, string pZip)
         {
 
 
             return;
         }
 
-        public Person()
-        {
+        
 
-        }
 
     }
 }
