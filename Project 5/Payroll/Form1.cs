@@ -17,33 +17,38 @@ namespace Payroll
         private bool onPayroll;
         private Person newPerson;
 
+        
+
         public mainForm()
         {
             InitializeComponent();
+            personList.DataSource = Employees;
         }
 
         private void basicInfo_Enter(object sender, EventArgs e)
         {
+
         }
         
         public void AddPerson(string fName, string lName, string currentNum)
         {
+
         }
 
         private void ListAdder()
         {
-            int counter = -1;
-
+            Employees.Add(newPerson);
+            //int counter = -1;
+            
             if (payrollYes.Checked)
             {
-                personList.Items.Add(firstName.Text + " " + lastName.Text + "***");
+                //personList.Items.Add(firstName.Text + " " + lastName.Text + "***");
             }
 
-            if(payrollNo.Checked)
+            if (payrollNo.Checked)
             {
-                personList.Items.Add(firstName.Text + " " + lastName.Text);
+                //personList.Items.Add(firstName.Text + " " + lastName.Text);
             }
-               
         }
 
         private void hirePerson_Click(object sender, EventArgs e)
@@ -53,16 +58,17 @@ namespace Payroll
             string inputNumber = phoneNum.Text;
             newPerson = new Person(inputFirstName, inputLastName, inputNumber);
 
+            string empName = inputFirstName + " " + inputLastName;
             string inputAddress = addressInfo.Text;
             string inputAptNum = pAptNum.Text;
             string inputCity = pCity.Text;
             string inputState = pState.Text;
             string inputZip = pZip.Text;
-            Employee newEmployee = new Employee(inputAddress, inputAptNum, inputCity, inputState, inputZip);
+            Employee newEmployee = new Employee(newPerson, inputAddress, inputAptNum, inputCity, inputState, inputZip);
+            
 
 
-
-            Employees.Add(newPerson);
+            
             ListAdder();
         }
 
@@ -72,9 +78,26 @@ namespace Payroll
             if (index != System.Windows.Forms.ListBox.NoMatches)
             {
                 MessageBox.Show(index.ToString());
-                
 
             }
         }
+
+        private static Random rand = new Random(DateTime.Now.Second);
+        private void generateHuman_Click(object sender, EventArgs e)
+        {
+            RandName();
+        }
+        
+        private void RandName()
+        {
+            string[] randFirstNames = new string[] { "Abby", "Abigail", "Adele", "Adrian", "Aaron", "Abdulai", "Abe", "Abel", "Abraham", "Adam", "Adan", "Adolfo", "Adolph", "Adrian"};
+            string[] randLastNames = new string[] { "Abbott", "Acosta", "Adams", "Adkins", "Aguilar", "Smith", "Scott", "McKenzie", "Sallah", "Thomas", "Taylor" };
+            
+
+            Random rand = new Random(DateTime.Now.Second);
+            firstName.Text = randFirstNames[rand.Next(0, randFirstNames.Length - 1)];
+            lastName.Text = randLastNames[rand.Next(0, randLastNames.Length - 1)];
+        }
+
     }
 }
