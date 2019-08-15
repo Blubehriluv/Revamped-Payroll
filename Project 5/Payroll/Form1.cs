@@ -86,6 +86,7 @@ namespace Payroll
         private void generateHuman_Click(object sender, EventArgs e)
         {
             RandName();
+            RandAddress();
         }
         
         private void RandName()
@@ -98,6 +99,20 @@ namespace Payroll
             firstName.Text = randFirstNames[rand.Next(0, randFirstNames.Length - 1)];
             lastName.Text = randLastNames[rand.Next(0, randLastNames.Length - 1)];
         }
-
+        
+        private void RandAddress()
+        {
+            //Creates the first four digits for the address
+            string[] digitOne = new string[] {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+            string[] digitTwo = new string[] {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+            string[] digitThree = new string[] {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+            string[] digitFour = new string[] {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+            
+            Random rand = new Random(DateTime.Now.Second);
+            string numCombo = digitOne[rand.Next(0, digitOne.Length - 1)] + digitTwo[rand.Next(0, digitTwo.Length - 1)] + digitThree[rand.Next(0, digitThree.Length - 1)] + digitFour[rand.Next(0, digitFour.Length - 1)];
+            
+            
+            string[] streetName = new string[] { "Bird", "Winchester", "Morgan's Mill", "Baseline", "Prevatte", "Scarborough", "Abe", "Abel", "Abraham"};
+        }
     }
 }
